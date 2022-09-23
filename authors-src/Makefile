@@ -8,13 +8,13 @@ down:
 logs:
 	docker compose -f local.yml logs
 migrate:
-	docker compose -f local.yml run -rm api python3 manage.py migrate
+	docker compose -f local.yml run --rm api python3 manage.py migrate
 makemigrations:
-	docker compose -f local.yml run -rm api python3 manage.py makemigrations
+	docker compose -f local.yml run --rm api python3 manage.py makemigrations
 collectstatics:
-	docker compose -f local.yml run -rm api python3 manage.py collectstatics --no-input --clear
+	docker compose -f local.yml run --rm api python3 manage.py collectstatics --no-input --clear
 superuser:
-	docker compose -f local.yml run -rm api python3 manage.py createsuperuser
+	docker compose -f local.yml run --rm api python3 manage.py createsuperuser
 down-v:
 	docker compose -f local.yml down -v
 
