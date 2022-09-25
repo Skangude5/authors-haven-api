@@ -113,7 +113,6 @@ PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
     'django.contrib.auth.hashers.Argon2PasswordHasher',
     'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
-    'django.contrib.auth.hashers.ScryptPasswordHasher',
 ]
 
 
@@ -188,6 +187,11 @@ CELERY_TIMEZONE = 'Asia/Kolkata'
 CELERY_ACCEPT_CONTENT = ["json"]
 CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_SERIALIZER = "json"
+
+REST_FRAMEWORK = {
+    "EXCEPTION_HANDLER": "core_apps.common.exceptions.common_exception_handler",
+    "NON_FIELD_ERRORS_KEY": "error",
+}
 
 LOGGING = {
     "version" : 1,
